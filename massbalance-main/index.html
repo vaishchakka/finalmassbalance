@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>MenstraMap</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+  <script>
+
+  </script>
+  <script>
+    const SUPABASE_URL = 'https://rkbvmrcgimhrzqxmwwyi.supabase.co';
+    const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJrYnZtcmNnaW1ocnpxeG13d3lpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjE3ODM5NzIsImV4cCI6MjAzNzM1OTk3Mn0.8bewciLrF0Z6AO8u6w9ohsxQK6QB91nBgISxF2cVf5A';
+    const supabaseInstance = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+    async function fetchData() {
+      // Replace 'your_table' with the name of your table
+      const { data, error } = await supabaseInstance
+        .from('sensor_data')
+        .select('*');
+
+      if (error) {
+        console.error('Error fetching data:', error);
+      } else {
+        let currentStock = data[data.length - 1].value;
+        console.log('Data:', currentStock);
+        let readingElement = document.getElementById('reading');
+        readingElement.textContent = currentStock;
+      }
+    }
+
+
+    const sensorData = supabaseInstance.channel('custom-all-channel')
+      .on(
+        'postgres_changes',
+        { event: '*', schema: 'public', table: 'sensor_data' },
+        (payload) => {
+          console.log('Change received!', payload);
+
+          let readingElement = document.getElementById('reading');
+          readingElement.textContent = payload.new.value;
+        }
+      )
+      .subscribe()
+
+    fetchData();
+
+  </script>
+  <link rel="stylesheet" type="text/css" href="./style.css">
+</head>
+
+<body>
+  <h1>Products Near Me </h1>
+  <div>Price Gilbert Library Floor 1 <br><br> Pad Stock: <span id="reading"></span></div>
+
+
+</body>
+
+</html>
