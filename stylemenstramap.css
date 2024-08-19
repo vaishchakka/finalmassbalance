@@ -34,3 +34,9 @@ div {
   text-align: center;
   position: relative;
 }
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
