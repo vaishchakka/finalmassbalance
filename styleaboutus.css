@@ -1,0 +1,19 @@
+body {
+    font-family: 'Inter', 'sans serif';
+    color: #dda2ee;
+    background: #dda2ee;
+    background-image: url('');
+    font-size: 30px;
+  }
+
+  .left-image {
+    float: left;
+    margin-right: 20px; /* Adjust the space between the image and the content */
+    width: 150px; /* Set the width of the image, adjust as needed */
+    height: auto; /* Ensure the aspect ratio is maintained */
+  }
+  
+  body {
+    overflow: hidden; /* Ensures the image does not cause unwanted scrolling */
+  }
+  
