@@ -40,3 +40,33 @@ ul {
   margin: 0;
   padding: 0;
 }
+
+/* Navigation Bar */
+nav {
+  background-color: #cf5bef;
+  padding: 15px;
+  overflow: hidden;
+}
+
+.nav-links {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  float: right;
+}
+
+.nav-links li {
+  display: inline;
+  margin-left: 20px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  font-size: 20px;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.nav-links a:hover {
+  color: #dda2ee;
+}
