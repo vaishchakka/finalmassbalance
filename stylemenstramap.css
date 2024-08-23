@@ -35,11 +35,6 @@ div {
   position: relative;
 }
 
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
 
 /* Navigation Bar */
 nav {
@@ -52,7 +47,7 @@ nav {
   list-style-type: none;
   margin: 0;
   padding: 0;
-  float: right;
+  float: left;
 }
 
 .nav-links li {
