@@ -1,13 +1,13 @@
 body {
   font-family: 'Inter', 'sans serif';
-  color: #edccf6;
-  background: #edccf6;
+  color: #e194f7;
+  background: #e194f7;
   background-image: url('./images/productnear.jpg');
   font-size: 30px;
 }
 
 h1 {
-  color: #edccf6;
+  color: #e194f7;
   font-size: 40px;
   text-align: left;
   margin: 30px;
@@ -16,7 +16,7 @@ h1 {
 #reading {
   font-size: 30px;
   font-weight: bold;
-  color: #edccf6;
+  color: #e194f7;
 }
 
 .stock-container {
@@ -29,7 +29,7 @@ h1 {
   height: 300px;
   background: #E3F4E5;
   margin: 30px;
-  border: 3px solid #edccf6;
+  border: 3px solid #e194f7;
   float: left;
   text-align: center;
   position: relative;
@@ -68,10 +68,10 @@ nav {
 .nav-links a {
   text-decoration: none;
   font-size: 20px;
-  color: #edccf6;
+  color: #e194f7;
   font-weight: bold;
 }
 
 .nav-links a:hover {
-  color: #dda2ee;
+  color: #d588ea;
 }
